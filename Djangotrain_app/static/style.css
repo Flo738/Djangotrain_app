@@ -77,8 +77,11 @@ nav{
     background-color: #b9b3b3;
     height: 60px;
     flex-direction: column;
+    cursor: pointer;
 }
-
+.trainlist:hover{
+    background-color: gold;
+}
 .trainlist p {
     margin-top: 3px;
     margin-left: 6px;

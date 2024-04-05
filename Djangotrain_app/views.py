@@ -20,3 +20,5 @@ def show(request, trains_id) :
         "Découverte" : Trains_screen.overview,
         "nextID" : int(trains_id) + 1,
 })
+
+
