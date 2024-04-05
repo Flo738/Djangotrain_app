@@ -1,0 +1,46 @@
+{%load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="{% static 'img/rail.png' %}">
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <img src="{% static 'img/image_section.jpg' %}">
+        </div>
+        <section class="lol">
+
+            <section id="presentation">
+                <div class="list">
+                    <div class="titre">
+                        <p> Envie de voyager ? </p>
+                    </div>
+                    {% for trainactuel in listTrains %}
+                    <div class="trainlist">
+                        <p> {{ trainactuel.name }}</p>
+                        <a class="next" href=" /Djangotrain_app/show/{{ trainactuel.trains_ID }}" > Voir </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </section>
+        </main>
+        <footer>
+            <p> Nous Contacter </p>
+        </footer>
+</body>
+</html>

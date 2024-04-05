@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Train</h1>
+    <P> Une recherche en particulier ?</P>
+    <h2> Quel train ? {{ Nom }} </h2>
+    <h2> Quelle ville ? {{ Ville }} </h2>
+    <h2> Venez découvrir les différentes villes ? {{ Découverte }} </h2>
+    <a href="/Djangotrain_app/show/{{ nextID }}"> Suivant </a>
+</body>
+</html>
+
+
