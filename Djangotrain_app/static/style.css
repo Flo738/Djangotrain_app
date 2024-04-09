@@ -23,10 +23,31 @@ header {
     width: 100%;
 }
 
-nav{
-    font-size: 35px;
+header nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
 }
-
+.nav-l{
+    text-decoration: none;
+    color: white;
+}
+.nav-l:hover{
+    color: #dda77b;
+}
+#menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2em;
+    list-style: none;
+    margin-left: 0;
+    padding: 3px;
+}
 #logo{
     width: 70px;
     padding-left: 10px;
@@ -34,33 +55,31 @@ nav{
 
 
 /*body*/
-
+.first{
+    border-radius: 10px;
+}
 #presentation{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    /* background-color: rgb(166, 160, 172); */
-    margin-right: -3em;
 }
 .titre p{
     color: #220c10;
     margin-bottom: 15px;
     font-size: 25px;
+    margin-left: 50px;
 }
 .container img {
     display: block;
-    width: 1100px;
-    height: 400px;
-    margin-left: 220px;
+    width: 100%;
+    height: 500px;
 }
 #presentation p{
     font-size: 20px;
 }
-.lol {
+.first {
     display: flex;
     width: 100%;
-    /* background-color: #3f4c48; */
 }
 
 .list{
@@ -69,36 +88,241 @@ nav{
     padding-top: 40px;
     
 }
+.trainlist p{
+    color: #220c10;
+}
 .trainlist{
-    border: solid black 3px;
+    display: flex;
+    margin-left: 50px;
+    border: solid #71677c 4px;
     margin-bottom: 20px;
-    width: 500px;
+    width: 800px;
     border-radius: 15px;
-    background-color: #b9b3b3;
-    height: 60px;
+    background-color: #220c10;
+    height: 105px;
     flex-direction: column;
-    cursor: pointer;
 }
 .trainlist:hover{
-    background-color: gold;
+    background-color: #a07575;
 }
 .trainlist p {
     margin-top: 3px;
     margin-left: 6px;
+    color: white;
 }
 .next{
+    margin-bottom: 5px;
+    display: inline-block;
+    background-color: #71677c;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-left: 730px;
+    cursor:pointer;
+    text-decoration: none;
+}
+.next:hover{
+    background-color: #945d5e;
+    color: #220c10;
+}
+ .villee{
     margin-left: 6px;
 }
+.part{
+    margin-top: 200px;
+} 
+.new{
+    margin-top: 55px;
+    width: 100%;
+    border-radius: 15px;
+}
+.news p{
+    color: #220c10;
+    /* margin-bottom: 15px; */
+    font-size: 22px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    margin: 15px;
+}
+.Card{
+    background-color: #71677c;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 50px;
+    margin-top: 70px;
+    font-size: 25px;
+    cursor: pointer;
+    border: #220c10 solid 4px;
+}
+.imagei{
+    margin-top: 15px;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+    border: solid #220c10 5px;
+}
 
+.adj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    margin: 20px;
+}
 /*footer*/
 
 footer{
     background-color: black;
     display: flex;
     text-align: center;
+    height: 50px;
 }
 
 footer p{
     color: white;
     padding-left: 45%;
+    margin-top: 10px;
+}
+
+
+/*Show*/
+
+.showtitle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #71677c;
+}
+
+.intro{
+    color: #945d5e;
+    margin-bottom: 2em;
+}
+.center{
+    margin-bottom: 30px;
+}
+.present{
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+#names{
+    font-size: 25px;
+}
+.bouton{
+    display: inline-block;
+    background-color: #220c10;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor:pointer;
+    text-decoration: none;
+    width: 130px;
+    margin-right: 50px;
+}
+.bouton:hover{
+    background-color: #945d5e;
+    color: #220c10;
+}
+.boutone{
+    display: inline-block;
+    background-color: #220c10;
+    color: white;
+    width: 130px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor:pointer;
+    text-decoration: none;
+    margin-right: 300px;
+
+}
+.boutone:hover{
+    background-color: #945d5e;
+    color: #220c10;
+}
+.boutoncentre{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.plan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 350px;
+    height: 500px;
+    width: 800px;
+    border: solid #220c10 5px;
+
+}
+
+.intro{
+    margin-left: 50px;
+}
+.present{
+    margin-left: 20px;
+}
+/*hasard*/
+.proposition{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/*Responsive*/
+
+@media screen and (max-width: 768px){
+    header {
+        padding-top: 10px;
+    }
+    #menu{
+        padding-right: 1em;
+    }
+    .trainlist {
+        width: 100%;
+    }
+    .plan{
+        margin: auto;
+    }
+    .next{
+        margin-left: auto;
+    }
+    .Card{
+        display: none;
+    }
+    .imagei {
+        display: none;
+    }
+    #container{
+        width: auto;
+    }
+    .showtitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+    }
+    .news{
+        display: none;
+    }
+}
+@media screen and (max-width: 768px){
+    .showtitle{
+        font-size: 30px;
+    }
+    .plan{
+        width: 100%;
+        margin-left: 0;
+    }
+    .bouton, .boutone{
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
 }

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="{% static 'img/rail.png' %}">
+            <div id="menu">
+                <a href="/Djangotrain_app/index" class="nav-l"> Acceuil </a>
+                <a href="/Djangotrain_app/show/1" class="nav-l"> Détails des trains </a>
+                <a href="/Djangotrain_app/hasard" class="nav-l"> Aléatoire </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1> Pas d'idée ? Laissez nous vous aider !</h1>
+        <h2 class="proposition"> Voici ce qu'on vous propose : </h2>
+    <!-- Pour ce qui va suivre j'ai copié collé la presentation de show en ajoutant trainhasard car la présentaiton reste la meme, sauf que c'est un train au hasard-->
+    <h2 class="present" id="loli"> Le nom de votre train :  {{ trainhasard.name }} </h2> 
+    <h3 class="present"> La ligne utilsé : {{ trainhasard.ligne }}</h3>
+    <img class="plan" src="{{ trainhasard.imagi.url }}">
+    <div class="show-present">
+    <h3 class="present"> Le départ est prévu à :  {{ trainhasard.time }} </h3>
+    <h3 class="present"> Votre destination :  {{ trainhasard.destination }} </h3>
+    <h3 class="present"> Ce que vous pouvez faire : {{ trainhasard.overview }} </h3>
+    </main>
+    <footer>
+        <p> HeticCF | PACARD Florian </p>
+    </footer>
+</body>
+</html>

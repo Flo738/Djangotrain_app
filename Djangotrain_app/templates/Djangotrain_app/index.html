@@ -1,4 +1,4 @@
-{%load static %}
+{%load static %} <!-- On utilise cette synthaxe pour afficher le css, elle est présente sur les 3 pages html-->
 
 
 <!DOCTYPE html>
@@ -16,31 +16,58 @@
     <header>
         <nav>
             <img id="logo" src="{% static 'img/rail.png' %}">
+            <div id="menu">
+                <a href="/Djangotrain_app/index" class="nav-l"> Acceuil </a>
+                <a href="/Djangotrain_app/show/1" class="nav-l"> Détails des trains </a>
+                <a href="/Djangotrain_app/hasard" class="nav-l"> Aléatoire </a>
+            </div>
         </nav>
     </header>
     <main>
         <div class="container">
-            <img src="{% static 'img/image_section.jpg' %}">
+            <img src="{% static 'img/image_section.jpg' %}"> 
         </div>
-        <section class="lol">
-
+        <section class="first">
             <section id="presentation">
-                <div class="list">
-                    <div class="titre">
-                        <p> Envie de voyager ? </p>
-                    </div>
-                    {% for trainactuel in listTrains %}
-                    <div class="trainlist">
-                        <p> {{ trainactuel.name }}</p>
-                        <a class="next" href="/Djangotrain_app/show/1" > Voir </a>
-                    </div>
-                    {% endfor %}
+                <div class="showtitle">
+                    <h2> Bienvenue sur HeticCF</h2>
                 </div>
+                <div class="list">
+                    <div class="showtitle">
+                        <p> Trouvez votre bonheur avec nos trains ! </p>
+                    </div>
+                    {% for trainactuel in listTrains %} <!-- On utilise cette boucle pour afficher les informartions que l'on shouhaite (à voir juste en dessous) de tous les trains de notre base de donnée -->
+                    <div class="trainlist">
+                        <p> {{ trainactuel.name }}</p> <!--On définit ce qu'on veut dans notre boucle, trainactuel et ce que l'on souhaite savoir. Ici name, time, destination, on aurait pu afficher n'importe quoi, tant que c'est défini dans notre models   -->
+                        <p class="part"> Départ : {{ trainactuel.time }} </p>
+                        <p class="villee"> {{ trainactuel.destination }}</p>    
+                        <a class="next"  href="/Djangotrain_app/show/{{ trainactuel.trainId }}"> Voir </a> <!-- Le lien  redirige vers la page show selon l'ID du train choisi, trainID qu'on a défini dans notre modèle -->
+                    </div>
+                    {% endfor %}<!--Fin de la boucle -->
+                </div>
+            </section>
+            <section class="scd">
+                <!-- <article class="news"> -->
+                    <div class="Card">
+                    <p class="card"> Pourquoi choisir HeticCF ? </p>
+                    <p class="card"> Nos 3 critères de voyage : </p>
+                    <p class="adj"> Rapidité </p>
+                    <p class="adj"> Confort </p>
+                    <p class="adj"> Sérénité</p>
+                    </div>
+                <!-- </article> -->
+                <article>
+                    <img class="imagei" src="{% static 'img/newtrain.jpg' %}">
+                </article>
+                <article>
+                    <img class="imagei" src="{% static 'img/luxetrain.jpg' %}">
+                </article>
             </section>
         </section>
         </main>
         <footer>
-            <p> Nous Contacter </p>
+            <p> HeticCF | PACARD Florian </p>
         </footer>
 </body>
 </html>
+

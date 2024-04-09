@@ -5,15 +5,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <h1> Train</h1>
-    <P> Une recherche en particulier ?</P>
-    <h2> Quel train ? {{ Nom }} </h2>
-    <h2> Quelle ville ? {{ Ville }} </h2>
-    <h2> Venez découvrir les différentes villes ? {{ Découverte }} </h2>
-    <a href="/Djangotrain_app/show/{{ nextID }}"> Suivant </a>
+    <header>
+        <nav>
+            <img id="logo" src="{% static 'img/rail.png' %}">
+            <div id="menu">
+                <a href="/Djangotrain_app/index" class="nav-l"> Acceuil </a>
+                <a href="/Djangotrain_app/show/1" class="nav-l"> Détails des trains </a>
+                <a href="/Djangotrain_app/hasard" class="nav-l"> Aléatoire </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <h1 class="showtitle">Votre train</h1>
+    <h2 class="intro"> Présentation du train </h2>
+    <h2 class="present" id="names"> Le nom de votre train :  {{ Nom }} </h2> 
+    <h3 class="present"> La ligne utilsé : {{ ligne }}</h3>
+    <section class="center">
+    <img class="plan" src="{{ imagi.url }}"> <!--Ici j'ai mis .url car sinon l'image ne s'affiche pas, il y avait un problème de chemin -->
+    <h3 class="present"> Le départ est prévu à :  {{ time }} </h3>
+    <h3 class="present"> Votre destination :  {{ Ville }} </h3>
+    <h3 class="present"> Ce que vous pouvez faire  : {{ Découverte }} </h3>
+    <div class="boutoncentre">
+    <a class="boutone" href="/Djangotrain_app/show/{{ preID }}"> Précédent </a>
+    <a class="bouton" href="/Djangotrain_app/show/{{ nextID }}"> Suivant </a>
+    </div>
+    </section>
+    </main>
+    <footer>
+        <p> HeticCF | PACARD Florian </p>
+    </footer>
 </body>
 </html>
 
