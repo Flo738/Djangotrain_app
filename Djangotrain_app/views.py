@@ -38,5 +38,18 @@ def hasard(request) :
     # fonction random qui choisi 1 seul train au hasard 
     return render(request, "Djangotrain_app/hasard.html", {
         "trainhasard" : trainhasard,
-        # pareil que index et show, on utilise trainhasard pour afficher le train random
+        # pareil que index et show, on utilise trainhasard pour afficher le train random sur la page hasard
+    })
+
+def recherche(request):
+    lestrains = Trains.objects.all()
+
+    text = request.GET.get('text')
+    # on utilise.get pour récupérer la valeur écrit par l'utilisateur dans la barre de recherche, le nom de la barre de recherche est text.
+   
+    lestrains = Trains.objects.filter(destination__icontains=text) 
+        # ici on filtre selon les différentes villes 
+    return render(request, "Djangotrain_app/recherche.html",{
+        'lestrains' : lestrains,
+        'text' : text
     })

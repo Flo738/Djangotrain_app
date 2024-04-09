@@ -1,0 +1,4 @@
+pour lancer l'appli il faut faire : python manage.py runserver
+ensuite il faut cliquer sur le lien .
+pour afficher le site apres le localhost il faut faire : /Djangotrain_app/index/
+et vous aurez accès au site HeticCF

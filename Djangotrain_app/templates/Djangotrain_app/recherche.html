@@ -1,16 +1,15 @@
-{% load static %}
+{%load static %} 
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
-    <title>Document</title>
 </head>
 <body>
     <header>
@@ -28,17 +27,15 @@
         </nav>
     </header>
     <main>
-        <h1> Pas d'idée ? Laissez nous vous aider !</h1>
-        <h2 class="proposition"> Voici ce qu'on vous propose : </h2>
-    <!-- Pour ce qui va suivre j'ai copié collé la presentation de show en ajoutant trainhasard car la présentaiton reste la meme, sauf que c'est un train au hasard-->
-    <h2 class="present" id="loli"> Le nom de votre train :  {{ trainhasard.name }} </h2> 
-    <h3 class="present"> La ligne utilsé : {{ trainhasard.ligne }}</h3>
-    <img class="plan" src="{{ trainhasard.imagi.url }}">
-    <div class="show-present">
-    <h3 class="present"> Le départ est prévu à :  {{ trainhasard.time }} </h3>
-    <h3 class="present"> Votre destination :  {{ trainhasard.destination }} </h3>
-    <h3 class="present"> Ce que vous pouvez faire : {{ trainhasard.overview }} </h3>
+        <h1> {{ text }}</h1> <!--Ici s'affiche ce que l'utilisateur écrit dans la barre de recherche -->
+        {% for train in lestrains %} <!-- Pareil que pour index -->
+        <h2 class="present" id="names"> Le nom de votre train :  {{ train.name }} </h2> 
+        <img class="plan" src="{{ train.imagi.url }}">
+        <h3 class="present"> Votre destination :  {{ train.destination }} </h3>
+        <h3 class="present"> Le départ est prévu à :  {{ train.time }} </h3>
+    <h3 class="present"> Ce que vous pouvez faire : {{ train.overview }} </h3>
     </main>
+    {% endfor %}
     <footer>
         <p> HeticCF | PACARD Florian </p>
     </footer>
